@@ -54,7 +54,8 @@
                 <h3 class="title">Customer stories</h3>
                 <p class="subtitle">Hear what our users say</p>
             </div>
-            <div class="information">
+            @if($testimonials->count())
+              <div class="information">
                 <div class="card">
                     <span class="mark">“</span>
                     @foreach ($testimonials as $testimonial)
@@ -91,6 +92,9 @@
                     </div>
                 </div>
             </div>
+            @else
+                <h2 style="text-align:center;">No testimonials yet.</h2>
+            @endif
 
         </main>
         <script src="{{asset('js/main.js')}}"></script>
