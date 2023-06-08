@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body{
+    background-color: hsl(30, 20%, 98%);
+    position: relative;
+}
+
+.container-page{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+header{
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    height: min-content;
+    justify-content: space-between;
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 30px 40px;
+    position: relative;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 46px;
+    justify-content: flex-start;
+}
+
+.nav-link{
+    list-style: none;
+    font-size: 16px
+}
+
+.nav-link a{
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-remix{
+    align-items: center;
+    background-color: hsl(29, 41%, 88%);
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    gap: 8px;
+    border-radius: 18px;
+    height: 36px;
+    width: 108px;
+}
+
+.hero-title{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 223px;
+    padding: 40px 40px 60px;
+    width: 100%;
+}
+
+.title{
+    color: rgb(177, 102, 72);
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+.subtitle{
+    font-size: 64px;
+    line-height: 1.5em;
+}
+
+.information{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 480px;
+    width: 100%;
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    opacity: 1;
+    height: 480px;
+    width: 400px;
+    position: relative;
+    padding-inline: 32px;
+}
+
+.information-card{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    inset-block-start: 130px;
+    width: 336px;
+    height: 140px;
+    position: absolute;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.information-card.active {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10;
+    opacity: 1;
+  }
+.testimonial{
+    font-size: 20px;
+    font-family:'Sora', sans-serif;
+}
+
+.mark{
+    font-family: 'Nunito Sans','Nunito Sans Placeholder', sans-serif;
+    font-size: 200px;
+    color: hsl(53, 35%, 91%);
+    position: relative;
+}
+
+.info-user{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    width: 336px;
+}
+
+.name{
+    font-size: 18px;
+    font-family: 'Sora', sans-serif;
+    line-height: 1.5em;
+    color: hsl(23, 40%, 38%);
+}
+
+.img-user{
+    border-radius: 20px;
+    transform: none;
+    transform-origin: 50% 50% 0px;
+}
+
+.container-arrows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+    height: 52px;
+    width: 123px;
+    inset-inline-start: 241px;
+    inset-block-start: 402px;
+    position: absolute;
+}
+
+.container-arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(53, 35%, 91%);
+    height: 52px;
+    width: 52px;
+    border-radius: 1000px;
+}
+
+.carousel{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    overflow: hidden;
+    height: 100%;
+    width: 680px;
+    position: relative;
+
+}
+
+.image{
+    border-radius: 40px;
+    object-fit: cover;
+    width: 80px;
+    opacity: .75;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image--active{
+   width: 580px;
+   opacity: 1;
+}
