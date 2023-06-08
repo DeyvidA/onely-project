@@ -57,53 +57,16 @@
             <div class="information">
                 <div class="card">
                     <span class="mark">“</span>
-                    <div class="information-card active" data-id="1">
-                        <p class="testimonial">I absolutely love this product! It
-                            has exceeded my expectations in
-                            every way. Highly recommended!
-                        </p>
+                    @foreach ($testimonials as $testimonial)
+                        <div class="information-card active" data-id="{{ $testimonial->id }}">
+                            <p class="testimonial">{{ $testimonial->testimonial }}</p>
+                            <div class="info-user">
+                                <img class="img-user" height="40" width="40" src="{{ $testimonial->image_url }}" alt="user1">
+                                <span class="name">{{ $testimonial->name }}</span>
+                            </div>
+                        </div>
+                    @endforeach
 
-                        <div class="info-user">
-                            <img class="img-user" height="40" width="40" src="https://framerusercontent.com/images/qDkrbsiOQl9xuHVKVOtkU89kjpg.jpg" alt="user1">
-                            <span class="name">Jhon Doe</span>
-                        </div>
-                    </div>
-                    <div class="information-card" data-id="2">
-                        <p class="testimonial">I've been using this service for a
-                            while now, and I'm extremely
-                            satisfied. The customer support
-                            is top-notch, and the results are
-                            fantastic!
-                        </p>
-                        <div class="info-user">
-                          <img class="img-user" height="40" width="40" src="https://framerusercontent.com/images/yC2S2Q7IpJCCGVZMDfLBX9hFI.jpg" alt="user2">
-                          <span class="name">Sarah M.</span>
-                        </div>
-                      </div>
-                      <div class="information-card" data-id="3">
-                        <p class="testimonial">I've tried many similar services
-                            before, but none of them
-                            compare to this one. The quality,
-                            reliability, and ease of use are
-                            unmatched.
-                        </p>
-                        <div class="info-user">
-                          <img class="img-user" height="40" width="40" src="https://framerusercontent.com/images/jNIf3Dy2aNE2mUJ7QdVRkaU2og.jpg" alt="user2">
-                          <span class="name">Emily S.</span>
-                        </div>
-                      </div>
-                      <div class="information-card" data-id="4">
-                        <p class="testimonial">I have recommended this service
-                            to all my friends and colleagues.
-                            It's a must-have for anyone
-                            looking to streamline their
-                            workflow.
-                        </p>
-                        <div class="info-user">
-                          <img class="img-user" height="40" width="40" src="https://framerusercontent.com/images/cowBrktGl15JZi9ots1QYdiy4.jpg" alt="user2">
-                          <span class="name">Lisa C.</span>
-                        </div>
-                      </div>
                     <div class="container-arrows">
                         <div class="container-arrow">
                             <svg class="arrow-left" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,11 +84,9 @@
                     </div>
                 </div>
                 <div class="carousel">
-                    <img class="image image--active " data-id="1" height="480" width="580px" src="{{asset('img/trip1.jpg')}}" alt="">
-                    <img class="image " data-id="2" height="480" width="580px" src="{{asset('img/prague.jpg')}}" alt="">
-                    <img class="image " data-id="3" height="480" width="580px" src="{{asset('img/trip1.jpg')}}" alt="">
-                    <img class="image " data-id="4" height="480" width="580px" src="{{asset('img/trip1.jpg')}}" alt="">
-                    <div class="information-img">
+                    @foreach ($testimonials as $testimonial)
+                        <img class="image image--active " data-id="1" height="480" width="580px" src="{{ $testimonial->image_url }}" alt="">
+                    @endforeach
 
                     </div>
                 </div>

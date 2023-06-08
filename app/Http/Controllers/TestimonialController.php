@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class TestimonialController extends Controller
 {
@@ -13,6 +15,10 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = Testimonial::all();
+        foreach ($testimonials as $testimonial) {
+            $testimonial->image_url = Storage::disk('public')->url($testimonial->image);
+        }
+
         return view('testimonials.index', compact('testimonials'));
     }
 
@@ -31,7 +37,10 @@ class TestimonialController extends Controller
     {
         $image = $request->file('image');
 
-        $path = $image->storePubliclyAs($image->getClientOriginalName());
+
+        // Storage::put($image, $contents, 'public');
+
+        $path = $image->storePublicly('testimonials', ['disk' => 'public']);
 
         // $data = $request->validate([
         //     'name' => 'required',
